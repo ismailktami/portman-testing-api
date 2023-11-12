@@ -1,0 +1,39 @@
+[
+    {
+      "name": "409 Sellers conflicts",
+      "overwrites": [
+        {
+          "overwriteRequestBody": [
+            {
+              "key": "sellerId",
+              "value": "135",
+              "overwrite": true
+            }
+          ]
+        }
+      ],
+      "tests": {
+        "contractTests": [
+          {
+            "statusCode": {
+              "enabled": true
+            }
+          }
+        ],
+        "contentTests": [
+          {
+            "responseBodyTests": [
+              {
+                "key": "sellerId",
+                "value": "135"
+              },
+              {
+                "key": "sellerId",
+                "assert": "not.to.be.undefined"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]

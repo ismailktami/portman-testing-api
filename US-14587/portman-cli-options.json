@@ -1,0 +1,10 @@
+{
+    "local": "./openapi.yml",
+    "baseUrl": "http://localhost:3050",
+    "output": "./postman.json",
+    "portmanConfigFile": "./portman-variations-testing-config.json",
+    "postmanConfigFile": "./postman-config.json",
+    "includeTests": true,
+    "syncPostman": true,
+    "runNewman": false
+  }

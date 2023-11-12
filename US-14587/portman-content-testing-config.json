@@ -1,0 +1,91 @@
+{
+  "version": 1.0,
+  "overwrites": [
+    {
+      "openApiOperationId":"operationId1",
+      "overwriteRequestBody": [
+        {
+          "key": "storageCountry",
+          "value": "FR",
+          "overwrite": true
+        }
+      ]
+    }
+  ],
+  "tests": {
+    "contentTests": [
+      {
+        "openApiOperationId": "operationId2",
+        "responseBodyTests": [
+          {
+            "key": "status_code",
+            "oneOf": [201, 200]
+          },
+          {
+            "key": "subscription",
+            "assert": "to.be.an('array')"
+          },
+          {
+            "key": "storageCountry",
+            "length": 2
+          }
+        ]
+      }
+    ],
+    "variationTests": [
+      {
+        "openApiOperationId": "operationId3",
+        "openApiResponse": "401",
+        "variations": [
+          {
+            "name": "401",
+            "overwrites": [
+              {
+                "overwriteRequestBody": [
+                  {
+                    "key": "id",
+                    "value": "155",
+                    "overwrite": true
+                  }
+                ]
+              }
+            ],
+            "tests": {
+              "contractTests": [
+                {
+                  "statusCode": {
+                    "enabled": true
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "openApiOperationId": "operationId4",
+        "openApiResponse": "201",
+        "variations": [
+          {
+            "name": "201",
+            "tests": {
+              "contractTests": [
+                {
+                  "statusCode": {
+                    "enabled": true
+                  },
+                  "jsonBody":{
+                    "enabled":true
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "globals": {
+    "stripResponseExamples": true
+  }
+}

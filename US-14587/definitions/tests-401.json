@@ -1,0 +1,89 @@
+[
+    {
+      "name": "400 Empty subscriptions",
+      "overwrites": [
+        {
+          "overwriteRequestBody": [
+            {
+              "key": "subscriptions",
+              "value": [],
+              "overwrite": true
+            }
+          ]
+        }
+      ],
+      "tests": {
+        "contractTests": [
+          {
+            "statusCode": {
+              "enabled": true
+            }
+          }
+        ],
+        "contentTests": [
+          {
+            "responseBodyTests": [
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "400 Empty storage country",
+      "overwrites": [
+        {
+          "overwriteRequestBody": [
+            {
+              "key": "storageCountry",
+              "value": null,
+              "overwrite": true
+            }
+          ]
+        }
+      ],
+      "tests": {
+        "contractTests": [
+          {
+            "statusCode": {
+              "enabled": true
+            }
+          }
+        ],
+        "contentTests": [
+          {
+            "responseBodyTests": [
+            ]
+          }
+        ]
+      }
+    },          
+    {
+      "name": "400 Empty sellerId",
+      "overwrites": [
+        {
+          "overwriteRequestBody": [
+            {
+              "key": "sellerId",
+              "value": null,
+              "overwrite": true
+            }
+          ]
+        }
+      ],
+      "tests": {
+        "contractTests": [
+          {
+            "statusCode": {
+              "enabled": true
+            }
+          }
+        ],
+        "contentTests": [
+          {
+            "responseBodyTests": [
+            ]
+          }
+        ]
+      }
+    }
+  ]

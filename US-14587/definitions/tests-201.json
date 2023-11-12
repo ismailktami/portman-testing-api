@@ -1,0 +1,57 @@
+[
+  {
+    "name": "201 verify success status",
+    "tests": {
+      "contractTests": [
+        {
+          "statusCode": {
+            "enabled": true
+          }
+        }
+      ],
+      "contentTests": [
+        {
+          "responseHeaderTests": [
+            {
+              "key": "Location",
+              "assert": "not.to.be.empty"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "201 Verify location header",
+    "tests": {
+      "contractTests": [
+        {
+          "statusCode": {
+            "enabled": true
+          }
+        }
+      ],
+      "contentTests": [
+        {
+          "responseHeaderTests": [
+            {
+              "key": "Location",
+              "assert": "not.to.be.empty"
+            }
+          ]
+        }
+      ]
+    },
+    "overwrites": [
+      {
+        "overwriteRequestBody": [
+          {
+            "key": "sellerId",
+            "value": "200",
+            "overwrite": true
+          }
+        ]
+      }
+    ]
+  }
+]
